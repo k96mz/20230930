@@ -1,7 +1,7 @@
 // ./main.js
 // MapLibre GL JSの読み込み
-import maplibregl from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css';
+// import maplibregl from 'maplibre-gl';
+// import 'maplibre-gl/dist/maplibre-gl.css';
 // import OpacityControl from 'maplibre-gl-opacity';
 // import 'maplibre-gl-opacity/dist/maplibre-gl-opacity.css';
 // import distance from '@turf/distance';
