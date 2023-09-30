@@ -1,6 +1,6 @@
 // ./main.js
 // MapLibre GL JSの読み込み
-import maplibregl from 'maplibre-gl';
+import maplibregl from 'maplibre-gl'; // maplibreglとmaplibre-glが何なのか不明。ファイルでもなさそう。
 import 'maplibre-gl/dist/maplibre-gl.css';
 // import OpacityControl from 'maplibre-gl-opacity';
 // import 'maplibre-gl-opacity/dist/maplibre-gl-opacity.css';
