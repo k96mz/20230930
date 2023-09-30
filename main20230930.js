@@ -2,12 +2,12 @@
 // MapLibre GL JSの読み込み
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import OpacityControl from 'maplibre-gl-opacity';
-import 'maplibre-gl-opacity/dist/maplibre-gl-opacity.css';
-import distance from '@turf/distance';
+// import OpacityControl from 'maplibre-gl-opacity';
+// import 'maplibre-gl-opacity/dist/maplibre-gl-opacity.css';
+// import distance from '@turf/distance';
 
   // 地理院標高タイルをMapLibre GL JSで利用するためのモジュール
-import { useGsiTerrainSource } from 'maplibre-gl-gsi-terrain';
+// import { useGsiTerrainSource } from 'maplibre-gl-gsi-terrain';
 
 const map = new maplibregl.Map({
   container: 'map', // div要素のid
@@ -29,72 +29,72 @@ const map = new maplibregl.Map({
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       },
       // 重ねるハザードマップここから
-      hazard_flood: {
-        type: 'raster',
-        tiles: [
-          'https://disaportaldata.gsi.go.jp/raster/01_flood_l2_shinsuishin_data/{z}/{x}/{y}.png',
-        ],
-        minzoom: 2,
-        maxzoom: 17,
-        tileSize: 256,
-        attribution:
-        '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
-      },
-      hazard_hightide: {
-        type: 'raster',
-        tiles: [
-          'https://disaportaldata.gsi.go.jp/raster/03_hightide_l2_shinsuishin_data/{z}/{x}/{y}.png',
-        ],
-        minzoom: 2,
-        maxzoom: 17,
-        tileSize: 256,
-        attribution: 
-          '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
-      },
-      hazard_tsunami: {
-        type: 'raster',
-        tiles: [
-          'https://disaportaldata.gsi.go.jp/raster/04_tsunami_newlegend_data/{z}/{x}/{y}.png',
-        ],
-        minzoom: 2,
-        maxzoom: 17,
-        tileSize: 256,
-        attribution: 
-          '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
-      },
-      hazard_doseki: {
-        type: 'raster',
-        tiles: [
-          'https://disaportaldata.gsi.go.jp/raster/05_dosekiryukeikaikuiki/{z}/{x}/{y}.png',
-        ],
-        minzoom: 2,
-        maxzoom: 17,
-        tileSize: 256,
-        attribution: 
-          '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
-      },
-      hazard_kyukeisha: {
-        type: 'raster',
-        tiles: [
-          'https://disaportaldata.gsi.go.jp/raster/05_kyukeishakeikaikuiki/{z}/{x}/{y}.png',
-        ],
-        minzoom: 2,
-        maxzoom: 17,
-        tileSize: 256,
-        attribution: 
-          '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
-      },
-      hazard_jisuberi: {
-        type: 'raster',
-        tiles: [
-          'https://disaportaldata.gsi.go.jp/raster/05_jisuberikeikaikuiki/{z}/{x}/{y}.png',
-        ],
-        minzoom: 2,
-        maxzoom: 17,
-        tileSize: 256,
-        attribution: 
-          '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
-      },
+      // hazard_flood: {
+      //   type: 'raster',
+      //   tiles: [
+      //     'https://disaportaldata.gsi.go.jp/raster/01_flood_l2_shinsuishin_data/{z}/{x}/{y}.png',
+      //   ],
+      //   minzoom: 2,
+      //   maxzoom: 17,
+      //   tileSize: 256,
+      //   attribution:
+      //   '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
+      // },
+      // hazard_hightide: {
+      //   type: 'raster',
+      //   tiles: [
+      //     'https://disaportaldata.gsi.go.jp/raster/03_hightide_l2_shinsuishin_data/{z}/{x}/{y}.png',
+      //   ],
+      //   minzoom: 2,
+      //   maxzoom: 17,
+      //   tileSize: 256,
+      //   attribution: 
+      //     '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
+      // },
+      // hazard_tsunami: {
+      //   type: 'raster',
+      //   tiles: [
+      //     'https://disaportaldata.gsi.go.jp/raster/04_tsunami_newlegend_data/{z}/{x}/{y}.png',
+      //   ],
+      //   minzoom: 2,
+      //   maxzoom: 17,
+      //   tileSize: 256,
+      //   attribution: 
+      //     '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
+      // },
+      // hazard_doseki: {
+      //   type: 'raster',
+      //   tiles: [
+      //     'https://disaportaldata.gsi.go.jp/raster/05_dosekiryukeikaikuiki/{z}/{x}/{y}.png',
+      //   ],
+      //   minzoom: 2,
+      //   maxzoom: 17,
+      //   tileSize: 256,
+      //   attribution: 
+      //     '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
+      // },
+      // hazard_kyukeisha: {
+      //   type: 'raster',
+      //   tiles: [
+      //     'https://disaportaldata.gsi.go.jp/raster/05_kyukeishakeikaikuiki/{z}/{x}/{y}.png',
+      //   ],
+      //   minzoom: 2,
+      //   maxzoom: 17,
+      //   tileSize: 256,
+      //   attribution: 
+      //     '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
+      // },
+      // hazard_jisuberi: {
+      //   type: 'raster',
+      //   tiles: [
+      //     'https://disaportaldata.gsi.go.jp/raster/05_jisuberikeikaikuiki/{z}/{x}/{y}.png',
+      //   ],
+      //   minzoom: 2,
+      //   maxzoom: 17,
+      //   tileSize: 256,
+      //   attribution: 
+      //     '<a href="https://disaportal.gsi.go.jp/hazardmap/copyright/opendata.html">ハザードマップポータルサイト</a>',
+      // },
       // 重ねるハザードマップここまで
       // skhb: {
       //   // 指定緊急避難場所ベクトルタイル
@@ -127,48 +127,48 @@ const map = new maplibregl.Map({
         type: 'raster',
       },
       // 重ねるハザードマップここから
-      {
-        id: 'hazard_flood_layer',
-        source: 'hazard_flood',
-        type: 'raster',
-        paint: { 'raster-opacity': 0.7 },
-        layout: { visibility: 'none' }, // レイヤーの表示はOpacityControlで操作するためデフォルトでは非表示
-      },
-      {
-        id: 'hazard_hightide_layer',
-        source: 'hazard_hightide',
-        type: 'raster',
-        paint: { 'raster-opacity': 0.7 },
-        layout: { visibility: 'none' }, 
-      },
-      {
-        id: 'hazard_tsunami_layer',
-        source: 'hazard_tsunami',
-        type: 'raster',
-        paint: { 'raster-opacity': 0.7 },
-        layout: { visibility: 'none' }, 
-      },
-      {
-        id: 'hazard_doseki_layer',
-        source: 'hazard_doseki',
-        type: 'raster',
-        paint: { 'raster-opacity': 0.7 },
-        layout: { visibility: 'none' }, 
-      },
-      {
-        id: 'hazard_kyukeisha_layer',
-        source: 'hazard_kyukeisha',
-        type: 'raster',
-        paint: { 'raster-opacity': 0.7 },
-        layout: { visibility: 'none' }, 
-      },
-      {
-        id: 'hazard_jisuberi_layer',
-        source: 'hazard_jisuberi',
-        type: 'raster',
-        paint: { 'raster-opacity': 0.7 },
-        layout: { visibility: 'none' }, 
-      },
+      // {
+      //   id: 'hazard_flood_layer',
+      //   source: 'hazard_flood',
+      //   type: 'raster',
+      //   paint: { 'raster-opacity': 0.7 },
+      //   layout: { visibility: 'none' }, // レイヤーの表示はOpacityControlで操作するためデフォルトでは非表示
+      // },
+      // {
+      //   id: 'hazard_hightide_layer',
+      //   source: 'hazard_hightide',
+      //   type: 'raster',
+      //   paint: { 'raster-opacity': 0.7 },
+      //   layout: { visibility: 'none' }, 
+      // },
+      // {
+      //   id: 'hazard_tsunami_layer',
+      //   source: 'hazard_tsunami',
+      //   type: 'raster',
+      //   paint: { 'raster-opacity': 0.7 },
+      //   layout: { visibility: 'none' }, 
+      // },
+      // {
+      //   id: 'hazard_doseki_layer',
+      //   source: 'hazard_doseki',
+      //   type: 'raster',
+      //   paint: { 'raster-opacity': 0.7 },
+      //   layout: { visibility: 'none' }, 
+      // },
+      // {
+      //   id: 'hazard_kyukeisha_layer',
+      //   source: 'hazard_kyukeisha',
+      //   type: 'raster',
+      //   paint: { 'raster-opacity': 0.7 },
+      //   layout: { visibility: 'none' }, 
+      // },
+      // {
+      //   id: 'hazard_jisuberi_layer',
+      //   source: 'hazard_jisuberi',
+      //   type: 'raster',
+      //   paint: { 'raster-opacity': 0.7 },
+      //   layout: { visibility: 'none' }, 
+      // },
       // 重ねるハザードマップここまで
     //   {
     //   // 現在位置と最寄り施設のライン
@@ -410,32 +410,32 @@ const map = new maplibregl.Map({
 
 
 
-let userLocation = null; // ユーザーの最新の現在地を保存する変数
-// MapLibre GL JSの現在地取得機能
-const geolocationControl = new maplibregl.GeolocateControl({
-  trackUserLocation: true,
-});
-map.addControl(geolocationControl, 'bottom-right');
-geolocationControl.on('geolocate', (e) => {
-  // 位置情報が更新されるたびに発火・userLocationを更新
-  userLocation = [e.coords.longitude, e.coords.latitude];
-});
+// let userLocation = null; // ユーザーの最新の現在地を保存する変数
+// // MapLibre GL JSの現在地取得機能
+// const geolocationControl = new maplibregl.GeolocateControl({
+//   trackUserLocation: true,
+// });
+// map.addControl(geolocationControl, 'bottom-right');
+// geolocationControl.on('geolocate', (e) => {
+//   // 位置情報が更新されるたびに発火・userLocationを更新
+//   userLocation = [e.coords.longitude, e.coords.latitude];
+// });
 
 
 // マップの初期ロード完了時に発火するイベントを定義
-map.on('load', () => {
-  // 背景地図・重ねるタイル地図のコントロール
-  const opacity = new OpacityControl({
-    baseLayers: {
-      'hazard_flood_layer': '洪水浸水想定区域', // layer-id: レイヤー名
-      'hazard_hightide_layer': '高潮浸水想定区域',
-      'hazard_tsunami_layer': '津波浸水想定区域',
-      'hazard_doseki_layer': '土石流警戒区域',
-      'hazard_kyukeisha_layer': '急傾斜警戒区域',
-      'hazard_jisuberi_layer': '地滑り警戒区域',
-    },
-  });
-  map.addControl(opacity, 'top-left'); // 第二引数で場所を指定
+// map.on('load', () => {
+//   // 背景地図・重ねるタイル地図のコントロール
+//   const opacity = new OpacityControl({
+//     baseLayers: {
+//       'hazard_flood_layer': '洪水浸水想定区域', // layer-id: レイヤー名
+//       'hazard_hightide_layer': '高潮浸水想定区域',
+//       'hazard_tsunami_layer': '津波浸水想定区域',
+//       'hazard_doseki_layer': '土石流警戒区域',
+//       'hazard_kyukeisha_layer': '急傾斜警戒区域',
+//       'hazard_jisuberi_layer': '地滑り警戒区域',
+//     },
+//   });
+//   map.addControl(opacity, 'top-left'); // 第二引数で場所を指定
   
   // 指定緊急避難場所レイヤーのコントロール
   // const opacitySkhb = new OpacityControl({
@@ -604,5 +604,5 @@ map.on('load', () => {
   //     features: [routeFeature],
   //   });
   // });
-});
+// });
 
