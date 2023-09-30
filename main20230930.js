@@ -9,8 +9,7 @@
   // 地理院標高タイルをMapLibre GL JSで利用するためのモジュール
 // import { useGsiTerrainSource } from 'maplibre-gl-gsi-terrain';
 
-window.alert("alertです");
-
+// window.alert("alertです");
 
 const map = new maplibregl.Map({
   container: 'map', // div要素のid
