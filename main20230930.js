@@ -12,25 +12,25 @@
 window.alert("alertです");
 
 
-// const map = new maplibregl.Map({
-//   container: 'map', // div要素のid
-//   zoom: 5, // 初期表示のズーム
-//   center: [138, 37], // 初期表示の中心
-//   minZoom: 2, // 最小ズーム
-//   maxZoom: 18, // 最大ズーム
-//   // maxBounds: [122, 20, 154, 50], // 表示可能な範囲、制限していると現在地を表示した時に、アメリカに飛ばない。
-//   style: {
-//     version: 8,
-//     sources: {
-//       // 背景地図ソース
-//       osm: {
-//         type: 'raster',
-//         tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
-//         maxzoom: 19,
-//         tileSize: 256,
-//         attribution: 
-//           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-//       },
+const map = new maplibregl.Map({
+  container: 'map', // div要素のid
+  zoom: 5, // 初期表示のズーム
+  center: [138, 37], // 初期表示の中心
+  minZoom: 2, // 最小ズーム
+  maxZoom: 18, // 最大ズーム
+  // maxBounds: [122, 20, 154, 50], // 表示可能な範囲、制限していると現在地を表示した時に、アメリカに飛ばない。
+  style: {
+    version: 8,
+    sources: {
+      // 背景地図ソース
+      osm: {
+        type: 'raster',
+        tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+        maxzoom: 19,
+        tileSize: 256,
+        attribution: 
+          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      },
       // 重ねるハザードマップここから
       // hazard_flood: {
       //   type: 'raster',
@@ -121,14 +121,14 @@ window.alert("alertです");
       //     features: [],
       //   },
       // },
-    // },
-    // layers: [
-    //   // 背景地図レイヤー
-    //   {
-    //     id: 'osm-layer',
-    //     source: 'osm',
-    //     type: 'raster',
-    //   },
+    },
+    layers: [
+      // 背景地図レイヤー
+      {
+        id: 'osm-layer',
+        source: 'osm',
+        type: 'raster',
+      },
       // 重ねるハザードマップここから
       // {
       //   id: 'hazard_flood_layer',
@@ -362,9 +362,9 @@ window.alert("alertです");
     //     filter: ['==', 'disaster8', 1], // disaster1が1の時だけ表示する mapboxのサイトにあった。https://docs.mapbox.com/help/glossary/filter/
     //     layout: { visibility: 'none' }, // レイヤーの表示はOpacityControlで操作するためデフォルトで非表示にしておく
     //   },
-//     ],
-//   },
-// });
+    ],
+  },
+});
 
 // 現在選択されている指定緊急避難場所レイヤー(skhb)を特定しそのfilter条件を返す
 // const getCurrentSkhbLayerFilter = () => {
