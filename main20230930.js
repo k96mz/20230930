@@ -1,9 +1,9 @@
 // ./main.js
 // MapLibre GL JSの読み込み
-// import maplibregl from 'maplibre-gl';
-// import 'maplibre-gl/dist/maplibre-gl.css';
-import OpacityControl from 'maplibre-gl-opacity';
-import 'maplibre-gl-opacity/dist/maplibre-gl-opacity.css';
+import maplibregl from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
+// import OpacityControl from 'maplibre-gl-opacity';
+// import 'maplibre-gl-opacity/dist/maplibre-gl-opacity.css';
 // import distance from '@turf/distance';
 
   // 地理院標高タイルをMapLibre GL JSで利用するためのモジュール
@@ -424,20 +424,20 @@ const map = new maplibregl.Map({
 // });
 
 
-// マップの初期ロード完了時に発火するイベントを定義
-map.on('load', () => {
-  // 背景地図・重ねるタイル地図のコントロール
-  const opacity = new OpacityControl({
-    baseLayers: {
-      'hazard_flood_layer': '洪水浸水想定区域', // layer-id: レイヤー名
-      'hazard_hightide_layer': '高潮浸水想定区域',
-      'hazard_tsunami_layer': '津波浸水想定区域',
-      'hazard_doseki_layer': '土石流警戒区域',
-      'hazard_kyukeisha_layer': '急傾斜警戒区域',
-      'hazard_jisuberi_layer': '地滑り警戒区域',
-    },
-  });
-  map.addControl(opacity, 'top-left'); // 第二引数で場所を指定
+// // マップの初期ロード完了時に発火するイベントを定義
+// map.on('load', () => {
+//   // 背景地図・重ねるタイル地図のコントロール
+//   const opacity = new OpacityControl({
+//     baseLayers: {
+//       'hazard_flood_layer': '洪水浸水想定区域', // layer-id: レイヤー名
+//       'hazard_hightide_layer': '高潮浸水想定区域',
+//       'hazard_tsunami_layer': '津波浸水想定区域',
+//       'hazard_doseki_layer': '土石流警戒区域',
+//       'hazard_kyukeisha_layer': '急傾斜警戒区域',
+//       'hazard_jisuberi_layer': '地滑り警戒区域',
+//     },
+//   });
+//   map.addControl(opacity, 'top-left'); // 第二引数で場所を指定
   
   // 指定緊急避難場所レイヤーのコントロール
   // const opacitySkhb = new OpacityControl({
@@ -606,5 +606,5 @@ map.on('load', () => {
   //     features: [routeFeature],
   //   });
   // });
-});
+// });
 
